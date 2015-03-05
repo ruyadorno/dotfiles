@@ -42,7 +42,7 @@ set tabstop=4 ""Default number of spaces a tab takes
 set shiftwidth=4
 set softtabstop=4 ""Allow deletion of whole tabs
 set backspace=indent,eol,start
-set wildignore+=*.orig,*.svn,*.hg,*.git,*.pyc,*node_modules/**,*bower_components/** ""Ignore all these annoying bitches
+set wildignore+=*.orig,*.svn,*.hg,*.git,*.pyc,*node_modules/**,*bower_components/** ""Ignore all these annoying extensions
 
 ""Activate different settings for different file types
 autocmd FileType html,htmldjango,xml,ctp set noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
