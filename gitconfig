@@ -27,6 +27,7 @@
     br = branch
     co = checkout
     df = diff
+    dt = difftool
     lg = log -p
     who = shortlog -s --
 [credential]
@@ -34,3 +35,5 @@
 [core]
     excludesfile = ~/.gitignore_global
 
+[push]
+	default = simple
