@@ -26,6 +26,14 @@ export PURE_GIT_PULL=0
 # Add a token for increased usage of brew
 export HOMEBREW_GITHUB_API_TOKEN=
 
+# GPG agent setup
+if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
+    source ~/.gnupg/.gpg-agent-info
+    export GPG_AGENT_INFO
+else
+    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+fi
+
 # My utils functions
 source $HOME/Documents/repos/dotfiles/utils
 

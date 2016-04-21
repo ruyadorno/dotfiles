@@ -66,8 +66,8 @@ let mapleader=","
 let g:mapleader=","
 
 "" Command-t options
-let g:CommandTMaxFiles=10000
-let g:CommandTMaxDepth=15
+let g:CommandTMaxFiles=20000
+let g:CommandTMaxDepth=20
 
 "" Set easy motion to use only one leader stroke
 let g:EasyMotion_leader_key = '<Leader>'
@@ -81,8 +81,10 @@ let g:signify_mapping_toggle = '<C-t>'
 "" I don't want any buffkill keymap
 let g:BufKillCreateMappings = 0
 
-"" Uses jsxhint
-let g:syntastic_javascript_checkers = ['jsxhint']
+"" Uses eslintme
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_generic = 1
+let g:syntastic_javascript_eslint_exec = 'eslintme'
 
 "" Make arrow keys works for wrapped lines$
 map <up> gk
@@ -112,14 +114,17 @@ nnoremap <C-l> <C-w>l
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 
-" Moving block selection
+"" Moving block selection
 xmap <C-k> :mo'<-- <CR> gv
 xmap <C-j> :mo'>+ <CR> gv
 
 nnoremap <C-N> :tabnew<cr>
 nnoremap <C-x> :tabclose<cr>
 
-" Make arrows switch between buffers
+"" Make arrows switch between buffers
 nnoremap <Left> :bprevious<CR>
 nnoremap <Right> :bnext<CR>
+
+"" tern_for_vim
+nnoremap <F6> :TernDef<CR>
 

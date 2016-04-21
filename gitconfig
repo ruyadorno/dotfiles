@@ -1,6 +1,7 @@
 [user]
     name = Ruy Adorno
     email = ruyadorno@hotmail.com
+    signingKey = 6E3D84CD
 [github]
     user = ruyadorno
 [color]
@@ -36,4 +37,7 @@
     excludesfile = ~/.gitignore_global
 
 [push]
-	default = simple
+    default = simple
+[commit]
+    gpgsign = true
+

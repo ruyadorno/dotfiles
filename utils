@@ -2,3 +2,19 @@ function npmrepo () {
     open `npm view $1 repository.url | sed 's/git:/https:/' | sed 's/\.git//' | sed 's/^git\+//'`
 }
 
+# useful alias
+alias weather="curl http://wttr.in/Montreal"
+
+# ipt useful aliases
+alias irm="ls | ipt -m | xargs trash"
+alias icheckout="git --no-pager log --oneline | ipt | cut -d ' ' -f 1 | xargs git checkout"
+alias irebase="git --no-pager log --oneline | ipt | cut -d ' ' -f 1 | xargs -o git rebase -i"
+alias iremove="git branch | ipt -m | xargs git branch -D"
+
+function iseek() {
+    cd $(ls -a -d */ .. | ipt)
+    iseek
+}
+
+alias icherry='git status -s | sed s/^...// | ipt -m | xargs git add'
+
