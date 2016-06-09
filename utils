@@ -2,8 +2,13 @@ function npmrepo () {
     open `npm view $1 repository.url | sed 's/git:/https:/' | sed 's/\.git//' | sed 's/^git\+//'`
 }
 
+function fopen() {
+  ffind "$@" | xargs -o vim;
+}
+
 # useful alias
 alias weather="curl http://wttr.in/Montreal"
+alias mode="stat -f \"%Lp\" $1"
 
 # ipt useful aliases
 alias irm="ls | ipt -m | xargs trash"
