@@ -2,16 +2,13 @@ function npmrepo () {
     open `npm view $1 repository.url | sed 's/git:/https:/' | sed 's/\.git//' | sed 's/^git\+//'`
 }
 
-function fopen() {
-  ffind "$@" | xargs -o vim;
-}
-
 # useful alias
 alias weather="curl http://wttr.in/Montreal"
 alias mode="stat -f \"%Lp\" $1"
 
 # ipt useful aliases
 alias irm="ls | ipt -m | xargs trash"
+alias igrm="git diff --name-only upstream/master | ipt -m | xargs git rm"
 alias icheckout="git --no-pager log --oneline | ipt | cut -d ' ' -f 1 | xargs git checkout"
 alias irebase="git --no-pager log --oneline | ipt | cut -d ' ' -f 1 | xargs -o git rebase -i"
 alias iremove="git branch | ipt -m | xargs git branch -D"
@@ -21,5 +18,16 @@ function iseek() {
     iseek
 }
 
+function iopen() {
+  vim "$(ffind \"$@\" | ipt -m)"
+}
+
 alias icherry='git status -s | sed s/^...// | ipt -m | xargs git add'
+
+# shorten a github url using git.io
+function gitio() {
+    local url="https://github.com/$1"
+    local code="$2"
+    curl -i https://git.io -F "url=$url" -F "code=$code"
+}
 
