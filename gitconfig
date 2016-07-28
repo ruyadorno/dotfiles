@@ -24,6 +24,7 @@
     removed = red
 [alias]
     ci = commit
+    cb = rev-parse --abbrev-ref HEAD
     st = status -sb
     br = branch
     co = checkout
