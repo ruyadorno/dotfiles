@@ -12,6 +12,8 @@ alias igrm="git diff --name-only upstream/master | ipt -m | xargs git rm"
 alias icheckout="git --no-pager log --oneline | ipt | cut -d ' ' -f 1 | xargs git checkout"
 alias irebase="git --no-pager log --oneline | ipt | cut -d ' ' -f 1 | xargs -o git rebase -i"
 alias iremove="git branch | ipt -m | xargs git branch -D"
+alias istash='git stash show $(git stash list | ipt | sed "s/\([^:]*\).*/\1/") -u'
+alias idiff='git diff @{upstream} -- $(git diff @{upstream} --name-only --relative | ipt)'
 
 function iseek() {
     cd $(ls -a -d */ .. | ipt)
@@ -19,7 +21,7 @@ function iseek() {
 }
 
 function iopen() {
-  vim "$(ffind \"$@\" | ipt -m)"
+  vim -o "$(ffind \"$@\" | ipt -m)"
 }
 
 alias icherry='git status -s | sed s/^...// | ipt -m | xargs git add'
