@@ -2,6 +2,10 @@ function npmrepo () {
     open `npm view $1 repository.url | sed 's/git:/https:/' | sed 's/\.git//' | sed 's/^git\+//'`
 }
 
+function jsonfmt () {
+    cat $1 | jsonlint > tmp-fmt.json && mv tmp-fmt.json $1
+}
+
 # useful alias
 alias weather="curl http://wttr.in/Montreal"
 alias mode="stat -f \"%Lp\" $1"
