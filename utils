@@ -37,3 +37,7 @@ function gitio() {
     curl -i https://git.io -F "url=$url" -F "code=$code"
 }
 
+function track() {
+    git branch --set-upstream-to upstream/master
+}
+
