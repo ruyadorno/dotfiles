@@ -42,7 +42,9 @@ set tabstop=4 ""Default number of spaces a tab takes
 set shiftwidth=4
 set softtabstop=4 ""Allow deletion of whole tabs
 set backspace=indent,eol,start
-set wildignore+=*.orig,*.svn,*.hg,*.git,*.pyc,*node_modules/**,*bower_components/** ""Ignore all these annoying extensions
+set wildignore+=*.orig,*.svn,*.hg,*.git,*.pyc ""Ignore all these annoying extensions
+set wildignore+=*/node_modules/*
+set wildignore+=*/bower_components/*
 
 ""Activate different settings for different file types
 autocmd FileType html,htmldjango,xml,ctp set noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
@@ -82,6 +84,7 @@ let g:signify_mapping_toggle = '<C-t>'
 let g:BufKillCreateMappings = 0
 
 "" Uses eslintme
+let g:syntastic_check_on_open = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_generic = 1
 let g:syntastic_javascript_eslint_exec = 'eslintme'
