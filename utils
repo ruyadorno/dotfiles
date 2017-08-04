@@ -37,7 +37,16 @@ function gitio() {
     curl -i https://git.io -F "url=$url" -F "code=$code"
 }
 
+function npmrun() {
+    export PATH=./node_modules/.bin:$PATH
+}
+
 function track() {
     git branch --set-upstream-to upstream/master
+}
+
+function reloadssh() {
+    fkill ssh-agent
+    eval $(ssh-agent -s)
 }
 
