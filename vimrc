@@ -67,10 +67,6 @@ set clipboard+=unnamed
 let mapleader=","
 let g:mapleader=","
 
-"" Command-t options
-let g:CommandTMaxFiles=20000
-let g:CommandTMaxDepth=20
-
 "" Set easy motion to use only one leader stroke
 let g:EasyMotion_leader_key = '<Leader>'
 
@@ -99,10 +95,9 @@ nnoremap <silent> <tab> <C-^>
 "" Better nerdtoolbar shortcut$
 nnoremap <silent> <leader><tab> :NERDTreeToggle<cr>
 
-"" Remap command-t shortcuts
-nnoremap <silent> <leader>g :CommandT<cr>
-nnoremap <silent> <leader>h :CommandTBuffer<cr>
-nnoremap <silent> <leader>p :YRShow<cr>
+"" Remap ctrl-p shortcuts
+nnoremap <silent> <leader>g :CtrlP<cr>
+nnoremap <silent> <leader>h :CtrlPBuffer<cr>
 
 "" Gundo map
 nnoremap <F5> :GundoToggle<CR>
