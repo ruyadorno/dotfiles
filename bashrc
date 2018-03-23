@@ -6,15 +6,15 @@ unset color_prompt force_color_prompt
 PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH
 
-# set macvim for use on terminal
-alias vim='mvim -v'
+# neovim alias
+alias vim='nvim'
 
 # common mistakes
 alias gti='git'
 alias got='git'
 
 # set vim as default editor
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # vi mode on terminal
