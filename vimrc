@@ -98,13 +98,9 @@ nnoremap <silent> <leader>g :CtrlP<cr>
 nnoremap <silent> <leader>h :CtrlPBuffer<cr>
 
 "" Gundo map
-nnoremap <F5> :GundoToggle<CR>
-
-"" Make ctrl+hjkl switch between splited screens
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+set undofile
+set undodir=~/.vim/undo
+nnoremap <F5> :MundoToggle<CR>
 
 "" Configs splitjoin keys
 nmap sj :SplitjoinSplit<cr>
