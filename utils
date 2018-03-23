@@ -14,10 +14,10 @@ alias images="wget -nd -H -p -A jpg,jpeg,png,gif -e robots=off"
 # ipt useful aliases
 alias irm="ls | ipt -m | xargs trash"
 alias igrm="git diff --name-only upstream/master | ipt -m | xargs git rm"
-alias icheckout="git --no-pager log --oneline | ipt | cut -d ' ' -f 1 | xargs git checkout"
+alias icheckout="git --no-pager log --oneline | ipt --unquoted | cut -d ' ' -f 1 | xargs git checkout"
 alias irebase="git --no-pager log --oneline | ipt | cut -d ' ' -f 1 | xargs -o git rebase -i"
 alias iremove="git branch | ipt -m | xargs git branch -D"
-alias istash='git stash show $(git stash list | ipt | sed "s/\([^:]*\).*/\1/") -u'
+alias ishow="git stash list | ipt --unquoted | cut -d ':' -f 1 | xargs git stash show -u"
 alias idiff='git diff @{upstream} -- $(git diff @{upstream} --name-only --relative | ipt)'
 
 function iseek() {
