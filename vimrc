@@ -54,11 +54,9 @@ autocmd BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 ""Ignore these types of files
 set wildignore+=*.o,*.obj,.git,*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,*.pdf,*.mp3,*.avi,*.mp4,*.webm,*.pyc
 
-""Colorscheme stuff
-let g:solarized_visibility='low'
-let g:solarized_contrast='high'
-colorscheme solarized
+let g:solarized_use16 = 1
 set background=dark
+colorscheme solarized8
 
 ""Uses system clipboard for yanking, only works with vim 7.3+
 set clipboard+=unnamed
