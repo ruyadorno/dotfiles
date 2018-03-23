@@ -34,3 +34,5 @@ export HOMEBREW_GITHUB_API_TOKEN=
 source $HOME/Documents/repos/dotfiles/utils
 . $HOME/Documents/repos/z/z.sh
 
+export NVM_DIR="$HOME/.nvm";[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
