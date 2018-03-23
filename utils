@@ -9,6 +9,7 @@ function jsonfmt () {
 # useful alias
 alias weather="curl http://wttr.in/Montreal"
 alias mode="stat -f \"%Lp\" $1"
+alias images="wget -nd -H -p -A jpg,jpeg,png,gif -e robots=off"
 
 # ipt useful aliases
 alias irm="ls | ipt -m | xargs trash"
