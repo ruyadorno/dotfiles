@@ -83,6 +83,8 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_generic = 1
 let g:syntastic_javascript_eslint_exec = 'eslintme'
 
+let g:statline_obsess = 1
+
 "" Make arrow keys works for wrapped lines$
 map <up> gk
 map <down> gj
