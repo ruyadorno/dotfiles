@@ -12,6 +12,7 @@ alias vim='nvim'
 # common mistakes
 alias gti='git'
 alias got='git'
+alias tree='tree -I node_modules'
 
 # set vim as default editor
 export VISUAL=nvim
