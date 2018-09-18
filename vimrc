@@ -82,6 +82,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_generic = 1
 let g:syntastic_javascript_eslint_exec = 'eslintme'
+let g:syntastic_typescript_checkers = ['tslint']
+let g:syntastic_javascript_tslint_exec = 'tslint -t stylish'
 
 let g:statline_obsess = 1
 
