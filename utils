@@ -20,6 +20,10 @@ alias iremove="git branch | ipt -m | xargs git branch -D"
 alias ishow="git stash list | ipt --unquoted | cut -d ':' -f 1 | xargs git stash show -u"
 alias idiff='git diff @{upstream} -- $(git diff @{upstream} --name-only --relative | ipt)'
 
+function cleanup_node_modules() {
+    find . -type d -name 'node_modules' -prune -exec trash '{}' +
+}
+
 function iseek() {
     cd $(ls -a -d */ .. | ipt)
     iseek
