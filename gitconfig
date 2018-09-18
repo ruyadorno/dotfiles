@@ -40,6 +40,8 @@
     dt = difftool
     lg = log -p
     who = shortlog -s --
+    nb = "!sh -c \"git checkout -b $(npx random-word-cli)-$(npx random-word-cli) \" -"
+    leaderboard = "!sh -c \"git shortlog -s | sort -nr\""
 [credential]
     helper = osxkeychain
 [core]
