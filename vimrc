@@ -33,6 +33,8 @@ set laststatus=2
 set mouse=nicr
 ""No timeout between shortcut keys
 set notimeout
+""Disabling modelines since I never really use them and they can be a security concern
+set nomodeline
 
 ""Formating...
 set expandtab ""Insert space chars instead of tab
