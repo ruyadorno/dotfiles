@@ -42,6 +42,8 @@
     who = shortlog -s --
     nb = "!sh -c \"git checkout -b $(npx random-word-cli)-$(npx random-word-cli) \" -"
     leaderboard = "!sh -c \"git shortlog -s | sort -nr\""
+    review = "!sh -c \"git st | ipt -p | xargs less --tabs=4 -RFX\""
+    fix = "!sh -c \"git st | ipt -p | xargs -o vim\""
 [credential]
     helper = osxkeychain
 [core]
