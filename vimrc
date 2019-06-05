@@ -89,6 +89,10 @@ let g:syntastic_javascript_tslint_exec = 'tslint -t stylish'
 
 let g:statline_obsess = 1
 
+"" Python setup
+let g:python_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 "" Make arrow keys works for wrapped lines$
 map <up> gk
 map <down> gj
