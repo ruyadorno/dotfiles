@@ -83,3 +83,4 @@ function reloadssh() {
     eval $(ssh-agent -s)
 }
 
+alias activatenvm='export NVM_DIR="$HOME/.nvm";[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
