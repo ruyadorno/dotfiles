@@ -54,6 +54,30 @@ function track() {
     git branch --set-upstream-to upstream/master
 }
 
+function replace() {
+    echo "============================================================="
+    echo "|                                                           |"
+    echo "| HOW TO EFFECTIVELY SEARCH AND REPLACE WITHIN THE TERMINAL |"
+    echo "|                                                           |"
+    echo "============================================================="
+    echo "> ag"
+    echo ">     -l only prints file names"
+    echo ">     -0 will separate printed file names with null"
+    echo ">     -G (optional) filename extension e.g: -G .test.js"
+    echo "> |"
+    echo "> xargs"
+    echo ">     -0 will separate printed file names with null"
+    echo "> sed"
+    echo ">     -i save files in place + provide extension e.g: -i .bkp"
+    echo ">     s/foo/bar/g"
+    echo "> "
+    echo "> EXAMPLE:"
+    echo "> ag -l -0 foo | xargs -0 sed -i .bkp s/foo/bar/g"
+    echo "> "
+    echo "> [OPTIONAL] Clear backup files with:"
+    echo "> trash *.bkp **/*.bkp"
+}
+
 function reloadssh() {
     fkill ssh-agent
     eval $(ssh-agent -s)
