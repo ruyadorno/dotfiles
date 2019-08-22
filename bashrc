@@ -21,13 +21,6 @@ export EDITOR="$VISUAL"
 # vi mode on terminal
 set -o vi
 
-# Define homebrew-installed browsers paths
-export CHROME_BIN=
-export FIREFOX_BIN=
-
-# Don't let sindresorhus/pure automatically pull git repos
-export PURE_GIT_PULL=0
-
 # Add a token for increased usage of brew
 export HOMEBREW_GITHUB_API_TOKEN=
 
@@ -36,4 +29,5 @@ source $HOME/Documents/repos/dotfiles/utils
 . $HOME/Documents/repos/z/z.sh
 
 export NVM_DIR="$HOME/.nvm";[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm use --silent 10
 
