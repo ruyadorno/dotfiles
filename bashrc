@@ -27,3 +27,5 @@ export HOMEBREW_GITHUB_API_TOKEN=
 # My utils functions
 source $HOME/Documents/repos/dotfiles/utils
 . $HOME/Documents/repos/z/z.sh
+
+nave use latest
