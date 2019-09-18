@@ -75,7 +75,7 @@ function replace() {
     echo "> ag -l -0 foo | xargs -0 sed -i .bkp s/foo/bar/g"
     echo "> "
     echo "> [OPTIONAL] Clear backup files with:"
-    echo "> trash *.bkp **/*.bkp"
+    echo "> find . -name *.bkp -delete"
 }
 
 function reloadssh() {
