@@ -41,6 +41,7 @@
     lg = log -p
     who = shortlog -s --
     nb = "!sh -c \"git checkout -b $(npx random-word-cli)-$(npx random-word-cli) \" -"
+    sb = "!sh -c \"git checkout $(git branch $1 | ipt | sed 's#. ##g')\""
     leaderboard = "!sh -c \"git shortlog -s | sort -nr\""
     review = "!sh -c \"git st | ipt -p | xargs less --tabs=4 -RFX\""
     fix = "!sh -c \"git st | ipt -p | xargs -o vim\""
