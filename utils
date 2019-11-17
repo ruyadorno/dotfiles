@@ -83,6 +83,35 @@ function reloadssh() {
     eval $(ssh-agent -s)
 }
 
+### ALL TOO COMMON MISTAKES, I'M DONE WITH TRYING TO PREVENT IT
+function gi() {
+    case "$1" in
+        tdiff)
+            git diff
+        ;;
+        tsb)
+            git sb
+        ;;
+        tst)
+            git st
+        ;;
+        tci)
+            git ci
+        ;;
+        tbranch)
+            git ci
+        ;;
+    esac
+}
+
+function gits() {
+    case "$1" in
+        t)
+            git st
+        ;;
+    esac
+}
+
 alias activatenvm='export NVM_DIR="$HOME/.nvm";[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
 
 alias reload="tmux new-session -t funnel-ui"
