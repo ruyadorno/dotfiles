@@ -45,7 +45,7 @@
     leaderboard = "!sh -c \"git shortlog -s | sort -nr\""
     review = "!sh -c \"git st | ipt -p | xargs less --tabs=4 -RFX\""
     fix = "!sh -c \"git st | ipt -p | xargs -o vim\""
-    trash = "!sh -c \"git st | ipt -p | xargs trash\""
+    trash = "!sh -c \"git st | ipt -p $1 | xargs trash\""
 [credential]
     helper = osxkeychain
 [core]
