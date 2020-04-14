@@ -128,9 +128,6 @@ nnoremap <C-x> :tabclose<cr>
 nnoremap <Left> :bprevious<CR>
 nnoremap <Right> :bnext<CR>
 
-"" tern_for_vim
-nnoremap <F6> :TernDef<CR>
-
 " :w!!
 " write the file when you accidentally opened it without the right (root) privileges
 cmap w!! w !sudo tee % > /dev/null
