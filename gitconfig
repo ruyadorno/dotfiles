@@ -56,3 +56,5 @@
     default = simple
 [commit]
     gpgsign = true
+[tag]
+    forceSignAnnotated = true
