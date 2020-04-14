@@ -132,3 +132,8 @@ nnoremap <Right> :bnext<CR>
 " write the file when you accidentally opened it without the right (root) privileges
 cmap w!! w !sudo tee % > /dev/null
 
+"" 80chars line
+if exists("&colorcolumn")
+  set colorcolumn=80
+endif
+
