@@ -49,6 +49,7 @@ set wildignore+=*/node_modules/*
 set wildignore+=*/bower_components/*
 
 ""Activate different settings for different file types
+autocmd FileType js,json set expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html,htmldjango,xml,ctp set noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType actionscript,haxe,php set noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
