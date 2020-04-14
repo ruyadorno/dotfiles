@@ -137,3 +137,9 @@ if exists("&colorcolumn")
   set colorcolumn=80
 endif
 
+"" :call Mdflat()
+"" Flat markdown format
+function Mdflat ()
+  :%s/\v\n  ([^-*])/ \1/g
+endfunction
+
