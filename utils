@@ -83,6 +83,20 @@ function reloadssh() {
     eval $(ssh-agent -s)
 }
 
+function updep() {
+    branchname="update-dependencies-$(date "+%Y%m%d")"
+    git checkout -b $branchname
+}
+
+function svg() {
+    asciinema rec "$1.cast"
+    cat "$1.cast" | svg-term --window true --term iterm2 --profile solarized --out $1
+}
+
+function svgfinish() {
+    cat "$1" | svg-term --window true --term iterm2 --profile solarized --out "$1.svg"
+}
+
 ### ALL TOO COMMON MISTAKES, I'M DONE WITH TRYING TO PREVENT IT
 function gi() {
     case "$1" in
