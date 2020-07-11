@@ -33,6 +33,7 @@
 [alias]
     ci = commit
     cb = rev-parse --abbrev-ref HEAD
+    rb = rev-parse --abbrev-ref @{u}
     st = status -sb
     br = branch
     co = checkout
@@ -41,7 +42,7 @@
     lg = log -p
     who = shortlog -s --
     nb = "!sh -c \"git checkout -b $(npx random-word-cli)-$(npx random-word-cli) \" -"
-    sb = "!sh -c \"git checkout $(git branch $1 | ipt | sed 's#. ##g')\""
+    sb = "!sh -c \"git checkout $(git branch $1 | ipt $1 | sed 's#. ##g')\""
     leaderboard = "!sh -c \"git shortlog -s | sort -nr\""
     review = "!sh -c \"git st | ipt -p | xargs less --tabs=4 -RFX\""
     fix = "!sh -c \"git st | ipt -p | xargs -o vim\""
@@ -50,7 +51,7 @@
     helper = osxkeychain
 [core]
     excludesfile = ~/.gitignore_global
-	pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = diff-so-fancy | less --tabs=4 -RFX
 
 [push]
     default = simple
