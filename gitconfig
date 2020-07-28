@@ -55,6 +55,8 @@
 
 [push]
     default = simple
+[pull]
+    ff = only
 [commit]
     gpgsign = true
 [tag]
