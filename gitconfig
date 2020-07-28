@@ -47,6 +47,8 @@
     review = "!sh -c \"git st | ipt -p | xargs less --tabs=4 -RFX\""
     fix = "!sh -c \"git st | ipt -p | xargs -o vim\""
     trash = "!sh -c \"git st | ipt -p $1 | xargs trash\""
+    patchit = "!f() { curl -L $1.patch | git am; }; f"
+    patchit-please = "!f() { curl -L $1.patch | git am -3; }; f"
 [credential]
     helper = osxkeychain
 [core]
