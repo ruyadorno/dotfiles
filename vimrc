@@ -57,7 +57,10 @@ autocmd BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 ""Ignore these types of files
 set wildignore+=*.o,*.obj,.git,*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,*.pdf,*.mp3,*.avi,*.mp4,*.webm,*.pyc
 
-let g:solarized_use16 = 1
+" set Vim-specific sequences for RGB colors
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set background=dark
 colorscheme solarized8
 
