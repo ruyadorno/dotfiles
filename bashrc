@@ -1,5 +1,7 @@
 # terminal color theming
-PS1='\[\033[31m\]\u\[\033[33m\]@macbookpro\[\033[32m\] \w \[\033[37m\]'
+if [ "$NAVE" == "" ]; then NAVE="macos"
+fi
+PS1='\[\033[31m\]\u\[\033[33m\]@$NAVE\[\033[32m\] \w \[\033[37m\]'
 unset color_prompt force_color_prompt
 
 # configure some useful paths
