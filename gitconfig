@@ -63,3 +63,5 @@
     gpgsign = true
 [tag]
     forceSignAnnotated = true
+[init]
+	defaultBranch = main
