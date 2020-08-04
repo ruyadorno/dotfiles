@@ -49,7 +49,6 @@
     trash = "!sh -c \"git st | ipt -p $1 | xargs trash\""
     patchit = "!f() { curl -L $1.patch | git am; }; f"
     patchit-please = "!f() { curl -L $1.patch | git am -3; }; f"
-    pr = "!f() { gh pr list | ipt -u | cut -f 3 -d $'\t' | xargs gh pr checkout; }; f"
 [credential]
     helper = osxkeychain
 [core]
