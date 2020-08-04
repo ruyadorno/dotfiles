@@ -20,6 +20,10 @@ alias iremove="git branch | ipt -m | xargs git branch -D"
 alias ishow="git stash list | ipt --unquoted | cut -d ':' -f 1 | xargs git stash show -u"
 alias idiff='git diff @{upstream} -- $(git diff @{upstream} --name-only --relative | ipt)'
 
+alias la='exa -a -a --group-directories-first -s type -h -l --time-style=long-iso'
+alias ll='la'
+alias tre='exa -a -T'
+
 function convertjpg() {
     find $1 -exec osascript Documents/convert-tojpg.scpt {} \;
 }
