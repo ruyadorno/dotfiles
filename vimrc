@@ -146,6 +146,6 @@ iabbrev lenght length
 "" :call Mdflat()
 "" Flat markdown format
 function Mdflat ()
-  :%s/\v\n  ([^-*])/ \1/g
+  :%s/\v\n(\s)+([^-* ])/ \2/g
 endfunction
 
