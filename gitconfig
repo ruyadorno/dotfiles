@@ -37,6 +37,8 @@
     st = status -sb
     br = branch
     co = checkout
+    checkuot = checkout
+    checktou = checkout
     df = diff
     dt = difftool
     lg = log -p
