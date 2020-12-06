@@ -51,6 +51,7 @@
     trash = "!sh -c \"git st | ipt -p $1 | xargs trash\""
     patchit = "!f() { curl -L $1.patch | git am; }; f"
     patchit-please = "!f() { curl -L $1.patch | git am -3; }; f"
+    hash = "!sh -c \"git log --oneline | ipt -u $1 | cut -d ' ' -f 1\""
 [credential]
     helper = osxkeychain
 [core]
