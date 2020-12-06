@@ -97,6 +97,10 @@ function svg() {
     cat "$1.cast" | svg-term --window true --term iterm2 --profile solarized --out $1
 }
 
+function svgbegin() {
+    asciinema rec "$1.cast"
+}
+
 function svgfinish() {
     cat "$1" | svg-term --window true --term iterm2 --profile solarized --out "$1.svg"
 }
