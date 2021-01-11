@@ -9,6 +9,9 @@ ln -s $HOME/dotfiles/.gitignore_global $HOME/.gitignore_global
 ln -s $HOME/dotfiles/.vimrc $HOME/.vimrc
 
 # npm global deps
+mkdir -p $HOME/Documents/workspace
+git clone https://github.com/npm/cli.git $HOME/Documents/workspace/cli
+
 mkdir -p $HOME/npm-prefix
 npm config set prefix=$HOME/npm-prefix
 

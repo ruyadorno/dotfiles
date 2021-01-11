@@ -27,8 +27,9 @@ set -o vi
 export HOMEBREW_GITHUB_API_TOKEN=
 
 # My utils functions
-source $HOME/Documents/repos/dotfiles/utils
-. $HOME/Documents/repos/z/z.sh
+[ -d "$HOME/dotfiles" ] && source $HOME/dotfiles/utils
+[ -d "$HOME/Documents/repos/dotfiles" ] && source $HOME/Documents/repos/dotfiles/utils
+[ -d "$HOME/Documents/repos/z" ] && . $HOME/Documents/repos/z/z.sh
 
 # Manual npm-prefix setup
 WORKSPACE_DIR="$HOME/Documents/workspace"
@@ -38,8 +39,8 @@ export npm_config_binroot="$npm_config_prefix/bin"
 export npm_config_manroot="$npm_config_prefix/share/man"
 PATH=$npm_config_prefix/bin:$PATH
 export PATH
-alias npm7="node $NPM_CLI"
-alias npx7="node $NPM_CLI/bin/npx-cli.js"
+alias npm="node $NPM_CLI"
+alias npx="node $NPM_CLI/bin/npx-cli.js"
 
 # gpg setup requirement
 export GPG_TTY=$(tty)
