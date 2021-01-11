@@ -1,12 +1,19 @@
-ln -s $HOME/dotfiles/.bashrc $HOME/.bash_profile
+# setup dotfiles symlinking
+rm $HOME/.bashrc
+rm $HOME/.npmrc
+rm $HOME/.gitconfig
+ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
+ln -s $HOME/dotfiles/.npmrc $HOME/.npmrc
 ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig
 ln -s $HOME/dotfiles/.gitignore_global $HOME/.gitignore_global
 ln -s $HOME/dotfiles/.vimrc $HOME/.vimrc
 
-# npm dependencies that I'm not likely to live without
+# npm global deps
+mkdir -p $HOME/npm-prefix
+npm config set prefix=$HOME/npm-prefix
+
 npm install -g jsonlint
 npm install -g eslint
-npm install -g eslint_d
 npm install -g eslintme
 npm install -g http-server
 npm install -g ipt
@@ -16,7 +23,6 @@ npm install -g localtunnel
 npm install -g diff-so-fancy
 npm install -g svg-term
 npm install -g json
-npm install -g vmd
 
 # vim setup
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
@@ -35,7 +41,6 @@ git clone https://github.com/editorconfig/editorconfig-vim.git
 git clone https://github.com/simnalamburt/vim-mundo.git
 git clone https://github.com/scrooloose/nerdtree.git
 git clone https://github.com/scrooloose/syntastic.git
-echo "Syntastic will rely on code validation tools, such as jshint"
 git clone https://github.com/altercation/vim-colors-solarized.git
 git clone https://github.com/lifepillar/vim-solarized8
 git clone https://github.com/Lokaltog/vim-easymotion.git
