@@ -1,3 +1,7 @@
+if ! hash trash 2>/dev/null; then
+    alias trash="rm -rf"
+fi
+
 function npmrepo () {
     open `npm view $1 repository.url | sed 's/git:/https:/' | sed 's/\.git//' | sed 's/^git\+//'`
 }
@@ -12,7 +16,7 @@ alias mode="stat -f \"%Lp\" $1"
 alias images="wget -nd -H -p -A jpg,jpeg,png,gif -e robots=off"
 
 # ipt useful aliases
-alias irm="ls | ipt -m | xargs trash"
+alias irm="ls | ipt -m | xargs rm -rf"
 alias igrm="git diff --name-only upstream/master | ipt -m | xargs git rm"
 alias icheckout="git --no-pager log --oneline | ipt --unquoted | cut -d ' ' -f 1 | xargs git checkout"
 alias irebase="git --no-pager log --oneline | ipt | cut -d ' ' -f 1 | xargs -o git rebase -i"
@@ -31,7 +35,7 @@ function convertjpg() {
 }
 
 function cleanup_node_modules() {
-    find . -type d -name 'node_modules' -prune -exec trash '{}' +
+    find . -type d -name 'node_modules' -prune -exec rm -rf '{}' +
 }
 
 function iseek() {

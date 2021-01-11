@@ -48,7 +48,7 @@
     leaderboard = "!sh -c \"git shortlog -s | sort -nr\""
     review = "!sh -c \"git st | ipt -p | xargs less --tabs=4 -RFX\""
     fix = "!sh -c \"git st | ipt -p | xargs -o vim\""
-    trash = "!sh -c \"git st | ipt -p $1 | xargs trash\""
+    trash = "!sh -c \"git st | ipt -p $1 | xargs rm -rf\""
     patchit = "!f() { curl -L $1.patch | git am; }; f"
     patchit-please = "!f() { curl -L $1.patch | git am -3; }; f"
     hash = "!sh -c \"git log --oneline | ipt -u $1 | cut -d ' ' -f 1\""
