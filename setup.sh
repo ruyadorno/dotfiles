@@ -1,3 +1,8 @@
+ln -s $HOME/dotfiles/.bashrc $HOME/.bash_profile
+ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig
+ln -s $HOME/dotfiles/.gitignore_global $HOME/.gitignore_global
+ln -s $HOME/dotfiles/.vimrc $HOME/.vimrc
+
 # npm dependencies that I'm not likely to live without
 npm install -g jsonlint
 npm install -g eslint
