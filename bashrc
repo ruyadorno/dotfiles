@@ -38,8 +38,8 @@ export npm_config_binroot="$npm_config_prefix/bin"
 export npm_config_manroot="$npm_config_prefix/share/man"
 PATH=$npm_config_prefix/bin:$PATH
 export PATH
-alias npm="node $NPM_CLI"
-alias npx="node $NPM_CLI/bin/npx-cli.js"
+alias npm7="node $NPM_CLI"
+alias npx7="node $NPM_CLI/bin/npx-cli.js"
 
 # gpg setup requirement
 export GPG_TTY=$(tty)
