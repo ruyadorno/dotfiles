@@ -32,15 +32,10 @@ export HOMEBREW_GITHUB_API_TOKEN=
 [ -d "$HOME/Documents/repos/z" ] && . $HOME/Documents/repos/z/z.sh
 
 # Manual npm-prefix setup
-WORKSPACE_DIR="$HOME/Documents/workspace"
-NPM_CLI="$WORKSPACE_DIR/cli"
 export npm_config_prefix="$HOME/npm-prefix"
 export npm_config_binroot="$npm_config_prefix/bin"
 export npm_config_manroot="$npm_config_prefix/share/man"
 PATH=$npm_config_prefix/bin:$PATH
-export PATH
-alias npm="node $NPM_CLI"
-alias npx="node $NPM_CLI/bin/npx-cli.js"
 
 # gpg setup requirement
 export GPG_TTY=$(tty)
