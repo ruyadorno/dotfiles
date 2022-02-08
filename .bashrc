@@ -5,7 +5,7 @@ PS1='\[\033[31m\]\u\[\033[33m\]@$NAVE\[\033[32m\] \w \[\033[37m\]'
 unset color_prompt force_color_prompt
 
 # configure some useful paths
-PATH=$HOME/bin:/usr/local/bin:$PATH
+PATH=/usr/local/bin:$HOME/bin:$PATH
 export PATH
 
 # neovim alias
