@@ -46,4 +46,4 @@ alias npx="node $NPM_CLI/bin/npx-cli.js"
 export GPG_TTY=$(tty)
 
 # export path for ccache
-export PATH="/usr/local/brew/opt/ccache/libexec:$PATH"
+export PATH="/usr/local/opt/ccache/libexec:$PATH"
