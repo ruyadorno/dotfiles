@@ -40,9 +40,9 @@ set nomodeline
 set expandtab ""Insert space chars instead of tab
 set autoindent smartindent ""Hope this make indenting stuff easier
 set copyindent
-set tabstop=4 ""Default number of spaces a tab takes
-set shiftwidth=4
-set softtabstop=4 ""Allow deletion of whole tabs
+set tabstop=2 ""Default number of spaces a tab takes
+set shiftwidth=2
+set softtabstop=2 ""Allow deletion of whole tabs
 set backspace=indent,eol,start
 set wildignore+=*.orig,*.svn,*.hg,*.git,*.pyc ""Ignore all these annoying extensions
 set wildignore+=*/node_modules/*
