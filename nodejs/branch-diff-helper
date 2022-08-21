@@ -1,0 +1,21 @@
+#!/bin/bash
+
+export CURRENT='v18'
+
+case $1 in
+  help|--help|-h)
+    cat <<EOF
+Usage: branch-diff-helper
+
+Commands:
+branch-diff-helper
+branch-diff-helper cherry-pick     Starts cherry-picking commits to insert in the release in the right order
+EOF
+    ;;
+  cherry-pick)
+    branch-diff $CURRENT.x-staging upstream/master --exclude-label semver-major,dont-land-on-$CURRENT.x,backport-requested-$CURRENT.x,backported-to-$CURRENT.x,backport-blocked-$CURRENT.x,backport-open-$CURRENT.x --filter-release --format=sha --reverse | xargs git cherry-pick
+    ;;
+  * )
+    branch-diff $CURRENT.x-staging upstream/master --exclude-label semver-major,dont-land-on-$CURRENT.x,backport-requested-$CURRENT.x,backported-to-$CURRENT.x,backport-blocked-$CURRENT.x,backport-open-$CURRENT.x --filter-release --no-color $@
+    ;;
+esac

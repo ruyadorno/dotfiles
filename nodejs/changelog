@@ -1,0 +1,16 @@
+#!/bin/bash
+
+case $1 in
+  help|--help|-h)
+    cat <<EOF
+Usage: changelog <version-number>
+
+Example: changelog v14.7.0
+
+Changelog info will be available at clipboard
+EOF
+    ;;
+  * )
+    changelog-maker --start-ref=$1 --group --filter-release | pbcopy
+    ;;
+esac
