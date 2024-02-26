@@ -83,9 +83,15 @@ function replace() {
     echo "> find . -name *.bkp -delete"
 }
 
+function killssh() {
+    ssh-agent -k
+    /usr/bin/ssh-agent -k
+}
+
 function reloadssh() {
-    fkill ssh-agent
-    eval $(ssh-agent -s)
+    killssh
+    eval $(/usr/bin/ssh-agent -s)
+    /usr/bin/ssh-add --apple-use-keychain ~/.ssh/id_rsa
 }
 
 function updep() {
