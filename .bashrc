@@ -44,3 +44,6 @@ export GPG_TTY=$(tty)
 
 # export path for ccache
 export PATH="/opt/homebrew/opt/ccache/libexec:$PATH"
+
+# Homebrew bootstrap
+eval "$(/opt/homebrew/bin/brew shellenv)"
