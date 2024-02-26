@@ -43,4 +43,4 @@ PATH=$npm_config_prefix/bin:$PATH
 export GPG_TTY=$(tty)
 
 # export path for ccache
-export PATH="/usr/local/opt/ccache/libexec:$PATH"
+export PATH="/opt/homebrew/opt/ccache/libexec:$PATH"
