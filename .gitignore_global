@@ -1,3 +1,7 @@
 .DS_Store
 Session.vim
 
+# node-core-utils configuration file
+.ncurc
+# node-core-utils working directory
+.ncu
