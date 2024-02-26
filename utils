@@ -156,3 +156,18 @@ function restore-node-bin() {
   sudo mv /usr/local/bin/npm-bkp /usr/local/bin/npm
   sudo mv /usr/local/bin/npx-bkp /usr/local/bin/npx
 }
+
+function corecount() {
+  node -p 'require("node:os").cpus().length'
+}
+
+alias token-ncu="vim -o ~/Library/Application\ Support/changelog-maker/config.json ~/.ncurc"
+
+function keynotecode() {
+  if [ -z "$2" ]
+    then src="pbpaste"
+  else
+    src="cat $2"
+  fi
+  $src | highlight -u utf-8 -O rtf --syntax=$1 --font=Inconsolata --style=nightshimmer --font-size=32 | pbcopy
+}
