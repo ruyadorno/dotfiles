@@ -4,6 +4,8 @@ fi
 PS1='\[\033[31m\]\u\[\033[33m\]@$NAVE\[\033[32m\] \w \[\033[37m\]'
 unset color_prompt force_color_prompt
 
+export HISTCONTROL=ignorespace
+
 # configure some useful paths
 PATH=/usr/local/bin:$HOME/bin:$PATH
 export PATH
