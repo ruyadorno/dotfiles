@@ -145,3 +145,14 @@ alias activatenvm='export NVM_DIR="$HOME/.nvm";[ -s "$NVM_DIR/nvm.sh" ] && \. "$
 
 alias reload="tmux new-session -A -t ruyadorno"
 
+function backup-node-bin() {
+  sudo mv /usr/local/bin/node /usr/local/bin/node-bkp
+  sudo mv /usr/local/bin/npm /usr/local/bin/npm-bkp
+  sudo mv /usr/local/bin/npx /usr/local/bin/npx-bkp
+}
+
+function restore-node-bin() {
+  sudo mv /usr/local/bin/node-bkp /usr/local/bin/node
+  sudo mv /usr/local/bin/npm-bkp /usr/local/bin/npm
+  sudo mv /usr/local/bin/npx-bkp /usr/local/bin/npx
+}
