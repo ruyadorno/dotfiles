@@ -11,6 +11,6 @@ Changelog info will be available at clipboard
 EOF
     ;;
   * )
-    changelog-maker --start-ref=$1 --group --filter-release | pbcopy
+    changelog-maker --start-ref=$1 --group --filter-release --markdown | pbcopy
     ;;
 esac
