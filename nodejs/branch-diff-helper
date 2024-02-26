@@ -1,6 +1,17 @@
 #!/bin/bash
 
-export CURRENT='v18'
+if [[ -z "${NODEJS_RELEASE_LINE}" ]]; then
+  printf '%s\n' "NODEJS_RELEASE_VERSION env var needs to be defined." >&2
+  exit 1
+else
+  CURRENT="${NODEJS_RELEASE_LINE}"
+fi
+
+function startcherrypick() {
+  head -n 20 .commit_list | xargs git cherry-pick 2>&1 | watch-cherry-pick
+  tail -n +21 .commit_list > .commit_list_next
+  mv .commit_list_next .commit_list
+}
 
 case $1 in
   help|--help|-h)
@@ -10,12 +21,35 @@ Usage: branch-diff-helper
 Commands:
 branch-diff-helper
 branch-diff-helper cherry-pick     Starts cherry-picking commits to insert in the release in the right order
+branch-diff-helper notable         Retrieves notable changes, requires being in the proposal branch
+branch-diff-helper notable-md      Markdown notable changes, requires being in the proposal branch
 EOF
     ;;
+  notable)
+    branch-diff upstream/$CURRENT.x $(git cb) --require-label=notable-change --plaintext
+    ;;
+  notable-md)
+    branch-diff upstream/$CURRENT.x $(git cb) --require-label=notable-change --markdown
+    ;;
+  deps)
+    git checkout --ours HEAD -- doc/contributing/maintaining/maintaining-dependencies.md
+    ;;
   cherry-pick)
-    branch-diff $CURRENT.x-staging upstream/master --exclude-label semver-major,dont-land-on-$CURRENT.x,backport-requested-$CURRENT.x,backported-to-$CURRENT.x,backport-blocked-$CURRENT.x,backport-open-$CURRENT.x --filter-release --format=sha --reverse | xargs git cherry-pick
+    branch-diff $CURRENT.x-staging upstream/main --exclude-label=semver-major,dont-land-on-$CURRENT.x,backport-requested-$CURRENT.x,backported-to-$CURRENT.x,backport-blocked-$CURRENT.x,backport-open-$CURRENT.x --filter-release --format=sha --reverse --cache | head | xargs git cherry-pick 2>&1 | watch-cherry-pick
+    ;;
+  paginate)
+    startcherrypick
+    ;;
+  prepare)
+    branch-diff $CURRENT.x-staging upstream/main --exclude-label=semver-major,dont-land-on-$CURRENT.x,backport-requested-$CURRENT.x,backported-to-$CURRENT.x,backport-blocked-$CURRENT.x,backport-open-$CURRENT.x --filter-release --format=sha --reverse --cache > .commit_list
+    ;;
+  continue)
+    git -c core.editor=true cherry-pick --continue 2>&1 | watch-cherry-pick
+    ;;
+  skip)
+    git cherry-pick --skip 2>&1 | watch-cherry-pick
     ;;
   * )
-    branch-diff $CURRENT.x-staging upstream/master --exclude-label semver-major,dont-land-on-$CURRENT.x,backport-requested-$CURRENT.x,backported-to-$CURRENT.x,backport-blocked-$CURRENT.x,backport-open-$CURRENT.x --filter-release --no-color $@
+    branch-diff $CURRENT.x-staging upstream/main --exclude-label=semver-major,dont-land-on-$CURRENT.x,backport-requested-$CURRENT.x,backported-to-$CURRENT.x,backport-blocked-$CURRENT.x,backport-open-$CURRENT.x --filter-release --no-color $@ --cache
     ;;
 esac
