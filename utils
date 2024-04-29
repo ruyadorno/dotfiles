@@ -174,3 +174,14 @@ function keynotecode() {
   fi
   $src | highlight -u utf-8 -O rtf --syntax=$1 --font=Inconsolata --style=nightshimmer --font-size=32 | pbcopy
 }
+
+function cronhelp() {
+cat << EOF
+*  *  * * * cmd
+│  │  │ │ └───── day of the week (0 - 7, both 0 and 7 represent Sunday)  
+│  │  │ └─────── month (1 - 12)  
+│  │  └───────── day of the month (1 - 31)  
+│  └──────────── hour (0 - 23)  
+└─────────────── minute (0 - 59)
+EOF
+}
